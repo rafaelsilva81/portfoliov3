@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-scroll": "^1.8.8",
+    "jotai": "^2.4.3",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-scroll": "^1.8.9"
   },
   "devDependencies": {
     "typescript": "latest",
