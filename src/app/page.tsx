@@ -1,18 +1,24 @@
 "use client";
 
 import PageSlider from "@/components/organisms/PageSlider";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { Element, scroller } from "react-scroll";
 
 export default function Home() {
-  const pageOrder = ["hero", "about", "technologies", "projects"];
-  const defaultScrollProps = {
-    duration: 1000,
-    smooth: true,
-  };
+  const pageOrder = useMemo(
+    () => ["hero", "about", "technologies", "projects"],
+    []
+  );
+
+  const defaultScrollProps = useMemo(() => {
+    return {
+      duration: 1000,
+      smooth: true,
+      spy: true,
+    };
+  }, []);
 
   useEffect(() => {
-    // on scroll, let the plugin know so it can adjust the active class
     window.addEventListener(
       "wheel",
       (e) => {
@@ -37,7 +43,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", () => {});
     };
-  }, []);
+  }, [defaultScrollProps, pageOrder]);
 
   return (
     <main>
