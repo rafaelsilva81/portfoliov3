@@ -1,14 +1,11 @@
 "use client";
 
-import PageSlider from "@/components/organisms/PageSlider";
+import PageSlider from "@/components/organism/PageSlider";
 import { useEffect, useMemo } from "react";
 import { Element, scroller } from "react-scroll";
 
 export default function Home() {
-  const pageOrder = useMemo(
-    () => ["hero", "about", "technologies", "projects"],
-    []
-  );
+  const pageOrder = useMemo(() => ["hero", "tech", "exp", "proj"], []);
 
   const defaultScrollProps = useMemo(() => {
     return {
@@ -50,20 +47,20 @@ export default function Home() {
       <PageSlider />
 
       <Element name="hero">
-        <div className="h-screen w-screen bg-red-500">HERO</div>
+        <div className="h-screen w-screen">HERO</div>
       </Element>
 
-      <div className="h-screen w-screen bg-green-500" id="about">
-        ABOUT
-      </div>
+      <Element name="tech">
+        <div className="h-screen w-screen">ABOUT</div>
+      </Element>
 
-      <div className="h-screen w-screen bg-blue-500" id="technologies">
-        TECHNOLOGIES
-      </div>
+      <Element name="exp">
+        <div className="h-screen w-screen">TECHNOLOGIES</div>
+      </Element>
 
-      <div className="h-screen w-screen bg-yellow-500" id="projects">
-        PROJECTS
-      </div>
+      <Element name="proj">
+        <div className="h-screen w-screen">PROJECTS</div>
+      </Element>
     </main>
   );
 }
