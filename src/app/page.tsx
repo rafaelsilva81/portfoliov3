@@ -1,6 +1,7 @@
 "use client";
 
 import PageSlider from "@/components/organism/PageSlider";
+
 import { useEffect, useMemo } from "react";
 import { Element, scroller } from "react-scroll";
 
