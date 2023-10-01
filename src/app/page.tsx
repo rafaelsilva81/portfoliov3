@@ -1,6 +1,8 @@
 "use client";
 
+import HeroPage from "@/components/organism/HeroPage";
 import PageSlider from "@/components/organism/PageSlider";
+import { TechPage } from "@/components/organism/TechPage";
 
 import { useEffect, useMemo } from "react";
 import { Element, scroller } from "react-scroll";
@@ -48,17 +50,14 @@ export default function Home() {
       <PageSlider />
 
       <Element name="hero">
-        <div className="h-screen w-screen">HERO</div>
+        <HeroPage />
       </Element>
-
       <Element name="tech">
-        <div className="h-screen w-screen">ABOUT</div>
+        <TechPage />
       </Element>
-
       <Element name="exp">
         <div className="h-screen w-screen">TECHNOLOGIES</div>
       </Element>
-
       <Element name="proj">
         <div className="h-screen w-screen">PROJECTS</div>
       </Element>

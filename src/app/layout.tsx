@@ -1,9 +1,13 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rajdhani } from "next/font/google";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const raj = Rajdhani({
+  weight: ["300", "500", "700"],
+  subsets: ["latin-ext"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Rafael Galdino da Silva",
@@ -25,7 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={clsx(inter.className, "bg-zinc-900 text-white")}>
+      <body
+        className={clsx(raj.className, "bg-zinc-900 text-white leading-none")}
+      >
         {children}
       </body>
     </html>

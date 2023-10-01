@@ -18,6 +18,10 @@ body {
   -ms-overflow-style: none;
   /* Disable scrollbar IE 10+ */
   overflow-y: scroll;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body::-webkit-scrollbar {
